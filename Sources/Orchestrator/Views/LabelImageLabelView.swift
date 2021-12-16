@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class LabelImageLabelView: UIView {
+public final class LabelImageLabelView: UIView {
   
   typealias InitParams = (header: String, imageName: String, footer: String)
   
@@ -28,7 +28,7 @@ final class LabelImageLabelView: UIView {
   
   private var imageOnlyMode: Bool
   
-  init(header: String, imageName: String, footer: String, imageOnly: Bool) {
+  public init(header: String, imageName: String, footer: String, imageOnly: Bool) {
     imageOnlyMode = imageOnly
 
     super.init(frame: .zero)
@@ -91,11 +91,11 @@ final class LabelImageLabelView: UIView {
 }
 
 extension LabelImageLabelView: OrchestratorViewDelegate {
-  var injectibleView: UIView {
+  public var injectibleView: UIView {
     self
   }
   
-  func orchestratorView(controller: OrchestratorDelegate?, willBeginAnimation: Bool) {
+  public func orchestratorView(controller: OrchestratorDelegate?, willBeginAnimation: Bool) {
     let duration: TimeInterval = 1.5
     let delay: TimeInterval = 0.75
     
